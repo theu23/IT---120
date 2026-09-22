@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sun Son Solar | Clean Energy Solutions</title>
+    <meta
+      name="description"
+      content="Sun Son Solar provides premium solar panels, storage, and full-service installation for homes and businesses."
+    />
+    <style>
+      :root {
+        --primary: #f5a623;
+        --primary-dark: #d88d0d;
+        --secondary: #102a43;
+        --secondary-soft: #244a73;
+        --dark: #0d1724;
+        --text: #1c2733;
+        --muted: #576574;
+        --light: #f7f9fc;
+        --white: #ffffff;
+        --border: rgba(16, 42, 67, 0.12);
+        --success: #1a9b68;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(180deg, #f4f8fb 0%, #edf7f2 100%);
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .container {
+        width: min(1180px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      .topbar {
+        background: rgba(12, 25, 39, 0.9);
+        color: var(--white);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        backdrop-filter: blur(10px);
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 78px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 800;
+        letter-spacing: 0.04em;
+      }
+
+      .brand-mark {
+        width: 42px;
+        height: 42px;
+        display: grid;
+        place-items: center;
+        border-radius: 12px;
+        background: linear-gradient(135deg, var(--primary), #ffdb7d);
+        color: var(--dark);
+        font-size: 1.3rem;
+        box-shadow: 0 10px 20px rgba(245, 166, 35, 0.35);
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 26px;
+        color: rgba(255, 255, 255, 0.84);
+        font-size: 0.96rem;
+      }
+
+      .nav-links a:hover {
+        color: var(--primary);
+      }
+
+      .nav-cta {
+        background: var(--primary);
+        color: var(--dark);
+        font-weight: 700;
+        padding: 12px 22px;
+        border-radius: 999px;
+        transition: 0.2s ease;
+      }
+
+      .nav-cta:hover {
+        background: #ffbb44;
+      }
+
+      .hero {
+        position: relative;
+        overflow: hidden;
+        background:
+          linear-gradient(120deg, rgba(7, 18, 29, 0.82), rgba(10, 42, 55, 0.6)),
+          url("photo.png") center/cover no-repeat;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at 20% 15%, rgba(245, 166, 35, 0.28), transparent 24%);
+      }
+
+      .hero-inner {
+        position: relative;
+        min-height: 560px;
+        padding: 120px 0 90px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 14px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.12);
+        color: #fef3d6;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        font-size: 0.82rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 22px 0 18px;
+        font-size: clamp(2.7rem, 5vw, 5rem);
+        line-height: 1.02;
+        letter-spacing: -0.06em;
+        color: var(--white);
+      }
+
+      .hero-copy {
+        max-width: 760px;
+      }
+
+      .hero-copy p {
+        margin: 0 auto 26px;
+        font-size: 1.08rem;
+        color: rgba(255, 255, 255, 0.8);
+        max-width: 620px;
+      }
+
+      .button-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px;
+      }
+
+      .primary-btn,
+      .secondary-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 52px;
+        padding: 0 24px;
+        border-radius: 999px;
+        font-weight: 700;
+        transition: 0.2s ease;
+      }
+
+      .primary-btn {
+        background: var(--primary);
+        color: var(--dark);
+      }
+
+      .primary-btn:hover {
+        background: #ffbb44;
+      }
+
+      .secondary-btn {
+        background: rgba(255, 255, 255, 0.08);
+        color: var(--white);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .secondary-btn:hover {
+        background: rgba(255, 255, 255, 0.14);
+      }
+
+      .section {
+        padding: 96px 0;
+      }
+
+      .section-header {
+        max-width: 680px;
+        margin: 0 auto 42px;
+        text-align: center;
+      }
+
+      .section-header h2 {
+        margin: 0 0 12px;
+        font-size: clamp(2rem, 4vw, 3rem);
+        color: var(--secondary);
+        letter-spacing: -0.05em;
+      }
+
+      .section-header p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 1.04rem;
+      }
+
+      .product-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(220px, 1fr));
+        gap: 22px;
+      }
+
+      .product-card {
+        background: var(--white);
+        border: 1px solid var(--border);
+        border-radius: 22px;
+        padding: 16px 16px 20px;
+        box-shadow: 0 10px 24px rgba(15, 22, 33, 0.04);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .product-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 20px 28px rgba(15, 22, 33, 0.08);
+      }
+
+      .product-photo {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 16px;
+        display: block;
+        margin-bottom: 18px;
+      }
+
+      .product-card h3 {
+        margin: 0 0 8px;
+        color: var(--secondary);
+        font-size: 1.24rem;
+      }
+
+      .product-card p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.96rem;
+      }
+
+      .features {
+        background: linear-gradient(180deg, rgba(13, 23, 36, 0.98), rgba(16, 42, 67, 0.96));
+        color: var(--white);
+      }
+
+      .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(240px, 1fr));
+        gap: 24px;
+      }
+
+      .feature-item {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 22px;
+        padding: 28px 22px;
+      }
+
+      .feature-item .icon-badge {
+        background: rgba(245, 166, 35, 0.15);
+        color: #ffd77a;
+      }
+
+      .feature-item h3 {
+        margin: 0 0 10px;
+        font-size: 1.35rem;
+      }
+
+      .feature-item p {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.76);
+      }
+
+      .cta-band {
+        background: linear-gradient(135deg, var(--primary), #ffd371);
+        border-radius: 28px;
+        padding: 32px 34px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+        box-shadow: 0 25px 50px rgba(245, 166, 35, 0.2);
+      }
+
+      .cta-band h3 {
+        margin: 0 0 8px;
+        color: var(--dark);
+        font-size: clamp(1.6rem, 2vw, 2.3rem);
+        letter-spacing: -0.04em;
+      }
+
+      .cta-band p {
+        margin: 0;
+        color: rgba(13, 23, 36, 0.75);
+        font-size: 1rem;
+      }
+
+      .contact {
+        padding: 80px 0 100px;
+      }
+
+      .contact-wrap {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 26px;
+        align-items: center;
+      }
+
+      .contact-box {
+        background: var(--white);
+        border: 1px solid var(--border);
+        border-radius: 28px;
+        padding: 30px;
+      }
+
+      .contact-box h3 {
+        margin: 0 0 18px;
+        color: var(--secondary);
+        font-size: 2rem;
+        letter-spacing: -0.05em;
+      }
+
+      .contact-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        gap: 14px;
+      }
+
+      .contact-list li {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        color: var(--muted);
+        font-size: 1rem;
+      }
+
+      .contact-list .dot {
+        width: 10px;
+        height: 10px;
+        background: var(--primary);
+        border-radius: 50%;
+      }
+
+      .contact-card {
+        background: linear-gradient(180deg, #11314f, #1f4668);
+        color: var(--white);
+        border-radius: 28px;
+        padding: 30px 26px;
+        box-shadow: 0 24px 45px rgba(17, 49, 79, 0.22);
+      }
+
+      .contact-card h4 {
+        margin: 0 0 16px;
+        font-size: 1.5rem;
+      }
+
+      .contact-card p {
+        margin: 0 0 18px;
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      .contact-card a {
+        display: inline-block;
+        margin-top: 8px;
+        color: #ffd77a;
+        font-weight: 700;
+      }
+
+      footer {
+        background: #091823;
+        color: rgba(255, 255, 255, 0.72);
+        padding: 26px 0 30px;
+      }
+
+      .footer-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        font-size: 0.94rem;
+      }
+
+      @media (max-width: 980px) {
+        .contact-wrap,
+        .product-grid,
+        .feature-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .hero-inner {
+          min-height: 480px;
+          padding-top: 90px;
+        }
+
+        .cta-band {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+
+      @media (max-width: 700px) {
+        .nav-links {
+          display: none;
+        }
+
+        .product-grid,
+        .feature-grid,
+        .hero-highlights,
+        .contact-wrap {
+          grid-template-columns: 1fr;
+        }
+
+        .hero {
+          background-position: center;
+        }
+
+        .section {
+          padding: 72px 0;
+        }
+
+        .footer-wrap {
+          flex-direction: column;
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container nav">
+        <a href="#home" class="brand" aria-label="Sun Son Solar home">
+          <span class="brand-mark">☀</span>
+          <span>Sun Son Solar</span>
+        </a>
+
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="#solutions">Solutions</a>
+          <a href="#about">Why Us</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <a href="#contact" class="nav-cta">Free Consultation</a>
+      </div>
+    </header>
+
+    <main id="home">
+      <section class="hero">
+        <div class="container hero-inner">
+          <div class="hero-copy">
+            <span class="eyebrow">Clean energy for every home</span>
+            <h1>Power your future with smarter solar.</h1>
+            <p>
+              Sun Son Solar delivers premium solar systems, battery storage, and
+              end-to-end installation support to help homeowners and businesses cut
+              energy costs and reduce their carbon footprint.
+            </p>
+
+            <div class="button-row">
+              <a href="#contact" class="primary-btn">Get a Free Quote</a>
+              <a href="#solutions" class="secondary-btn">Explore Solutions</a>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="solutions">
+        <div class="container">
+          <div class="section-header">
+            <h2>Complete solar products and services</h2>
+            <p>
+              From generation to installation and long-term support, we make it easy
+              to build a high-performing solar system that fits your property and goals.
+            </p>
+          </div>
+
+          <div class="product-grid">
+            <article class="product-card">
+              <img class="product-photo" src="photo.png" alt="Solar panels" />
+              <h3>Solar panels</h3>
+              <p>High-efficiency modules built for long-term power production and durability.</p>
+            </article>
+
+            <article class="product-card">
+              <img class="product-photo" src="inverters.jpg" alt="Solar inverter" />
+              <h3>Inverters</h3>
+              <p>Smart conversion systems that maximize solar output and efficiency.</p>
+            </article>
+
+            <article class="product-card">
+              <img class="product-photo" src="batteries.jpg" alt="Battery storage" />
+              <h3>Batteries</h3>
+              <p>Energy storage for backup, peak shaving, and greater energy independence.</p>
+            </article>
+
+            <article class="product-card">
+              <img class="product-photo" src="rackingmounting.png" alt="Racking and mounting system" />
+              <h3>Racking &amp; mounting</h3>
+              <p>Durable, weather-ready mounting systems for secure rooftop and ground installs.</p>
+            </article>
+
+            <article class="product-card">
+              <img class="product-photo" src="wires.jpg" alt="Electrical wires" />
+              <h3>Wires</h3>
+              <p>Reliable electrical connections designed for safety, efficiency, and longevity.</p>
+            </article>
+
+            <article class="product-card">
+              <img class="product-photo" src="consultation.jpg" alt="Solar consultation" />
+              <h3>Consultation</h3>
+              <p>Expert guidance to evaluate your site, energy use, and best-fit solar strategy.</p>
+            </article>
+
+            <article class="product-card">
+              <img class="product-photo" src="systemdesign.jpg" alt="System design" />
+              <h3>System design</h3>
+              <p>Custom layouts engineered for maximum performance and compliance.</p>
+            </article>
+
+            <article class="product-card">
+              <img class="product-photo" src="permitting.jpg" alt="Permitting paperwork" />
+              <h3>Permitting</h3>
+              <p>Complete paperwork and approvals to streamline project planning and delivery.</p>
+            </article>
+
+            <article class="product-card">
+              <img class="product-photo" src="installation.jpg" alt="Solar installation" />
+              <h3>Installation</h3>
+              <p>Professional installation by certified crews focused on performance and safety.</p>
+            </article>
+
+            <article class="product-card">
+              <img class="product-photo" src="maintenance.png" alt="Solar maintenance" />
+              <h3>Maintenance</h3>
+              <p>Preventive care to keep your system running at its best year-round.</p>
+            </article>
+
+            <article class="product-card">
+              <img class="product-photo" src="repair.jpg" alt="Solar repair service" />
+              <h3>Repair</h3>
+              <p>Fast troubleshooting and repair solutions for damaged or underperforming equipment.</p>
+            </article>
+
+            <article class="product-card">
+              <img class="product-photo" src="monitoring.jpg" alt="Solar monitoring" />
+              <h3>Monitoring</h3>
+              <p>Real-time performance checks and alerts to protect your solar investment.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section features" id="about">
+        <div class="container">
+          <div class="section-header">
+            <h2 style="color: var(--white);">Why homeowners choose Sun Son Solar</h2>
+            <p style="color: rgba(255, 255, 255, 0.7);">
+              We combine premium products, technical expertise, and dependable support.
+            </p>
+          </div>
+
+          <div class="feature-grid">
+            <article class="feature-item">
+              <h3>High-performance systems</h3>
+              <p>We design energy systems that produce more power with fewer compromises.</p>
+            </article>
+
+            <article class="feature-item">
+              <h3>Trusted craftsmanship</h3>
+              <p>From engineering to installation, our team focuses on quality and long-term reliability.</p>
+            </article>
+
+            <article class="feature-item">
+              <h3>Lower energy bills</h3>
+              <p>Reduce utility dependence and improve your return on investment with smart solar solutions.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section contact" id="contact">
+        <div class="container">
+          <div class="cta-band">
+            <div>
+              <h3>Ready to make the switch to solar?</h3>
+              <p>Book a no-cost consultation and find the right system for your home or business.</p>
+            </div>
+            <a href="#" class="primary-btn">Schedule Today</a>
+          </div>
+
+          <div class="contact-wrap" style="margin-top: 36px;">
+            <div class="contact-box">
+              <h3>Let’s build your energy future.</h3>
+              <ul class="contact-list">
+                <li><span class="dot"></span> Expert solar advice for residential and commercial projects</li>
+                <li><span class="dot"></span> Premium equipment and professional installation</li>
+                <li><span class="dot"></span> Ongoing maintenance, repair, and monitoring support</li>
+              </ul>
+            </div>
+
+            <div class="contact-card">
+              <h4>Contact Sun Son Solar</h4>
+              <p>Call us for a free quote or ask us about your next solar project.</p>
+              <a href="tel:+1234567890">(123) 456-7890</a><br />
+              <a href="mailto:info@sunsonsolar.com">info@sunsonsolar.com</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-wrap">
+        <span>© <span id="year"></span> Sun Son Solar</span>
+        <span>Clean energy solutions for a brighter tomorrow</span>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
