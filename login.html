@@ -11,19 +11,19 @@
       --ink: #102f50;
       --muted: #526476;
       --navy: #172533;
-      --panel: rgba(247, 251, 251, 0.92);
-      --line: rgba(255, 255, 255, 0.7);
-      --accent: #ffad1f;
-      --accent-dark: #d98100;
+      --panel: #fffefa;
+      --line: #d8e0e7;
+      --accent: #b95f00;
+      --accent-dark: #914900;
       --success: #2d795d;
       --error: #b84238;
-      --shadow: 0 24px 70px rgba(71, 49, 26, 0.16);
+      --shadow: 0 24px 70px rgba(5, 24, 42, 0.24);
     }
 
     * { box-sizing: border-box; }
 
     body {
-      min-height: 100vh;
+      min-height: 100svh;
       margin: 0;
       color: #fff;
       background: #142f5e;
@@ -31,24 +31,22 @@
     }
 
     .page {
-      min-height: 100vh;
+      min-height: 100svh;
       display: grid;
-      place-items: center;
-      padding: 0;
     }
 
     .login-shell {
       position: relative;
       isolation: isolate;
       width: 100%;
-      min-height: 100vh;
+      min-height: 100svh;
       display: grid;
-      grid-template-columns: 1fr;
+      grid-template-columns: minmax(0, 1fr) minmax(340px, 430px);
+      gap: clamp(36px, 7vw, 104px);
       align-items: center;
-      padding: 104px clamp(24px, 8vw, 120px) clamp(48px, 7vw, 92px);
-      overflow: hidden;
+      padding: clamp(96px, 13vh, 132px) clamp(24px, 8vw, 120px) clamp(40px, 7vh, 72px);
       background:
-        linear-gradient(90deg, rgba(11, 46, 78, 0.82) 0%, rgba(13, 57, 93, 0.52) 48%, rgba(24, 57, 77, 0.7) 100%),
+        linear-gradient(90deg, rgba(8, 35, 61, 0.88) 0%, rgba(10, 47, 75, 0.68) 48%, rgba(12, 36, 52, 0.72) 100%),
         url('https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1800&q=90') center / cover;
     }
 
@@ -61,64 +59,36 @@
       z-index: -1;
     }
 
-    .site-header {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 2;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      min-height: 64px;
-      padding: 0 clamp(24px, 8vw, 120px);
-      color: rgba(255, 255, 255, 0.76);
-      background: rgba(23, 37, 51, 0.94);
-      font: 500 0.78rem/1 'DM Sans', Arial, sans-serif;
-    }
-
-    .site-brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      color: #fff;
-      font: 700 0.92rem/1 'Space Grotesk', Arial, sans-serif;
-      text-decoration: none;
-    }
-
     .brand-mark {
       display: grid;
-      width: 34px;
-      height: 34px;
+      width: 38px;
+      height: 38px;
       place-items: center;
-      border-radius: 10px;
+      border-radius: 12px;
       color: var(--navy);
-      background: var(--accent);
-      box-shadow: 0 5px 16px rgba(255, 173, 31, 0.3);
+      background: #ffc45a;
+      box-shadow: 0 5px 16px rgba(255, 196, 90, 0.3);
       font-size: 1.1rem;
     }
 
     .brand-panel {
-      position: absolute;
-      top: 50%;
-      left: clamp(24px, 8vw, 120px);
+      position: relative;
       z-index: 1;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      min-height: 430px;
-      width: min(330px, 30vw);
+      justify-content: center;
+      min-width: 0;
+      max-width: 600px;
       padding: 30px 0;
       color: #fff8e8;
       background: transparent;
-      transform: translateY(-50%);
     }
 
     .brand-panel .eyebrow:last-child { margin-bottom: 0; }
 
     .eyebrow {
       margin: 0 0 22px;
-      color: #ffbd36;
+      color: #ffd071;
       font: 700 0.72rem/1.2 'DM Sans', Arial, sans-serif;
       letter-spacing: 0.16em;
       text-transform: uppercase;
@@ -126,9 +96,9 @@
 
     .brand-lockup {
       max-width: 430px;
-      margin: 0 0 44px;
-      color: #ffb21f;
-      font: 700 clamp(2.8rem, 5vw, 5.4rem)/0.88 'Space Grotesk', Arial, sans-serif;
+      margin: 0 0 30px;
+      color: #ffd071;
+      font: 700 clamp(3.4rem, 6.2vw, 6.4rem)/0.88 'Space Grotesk', Arial, sans-serif;
       letter-spacing: -0.07em;
       text-transform: uppercase;
     }
@@ -141,36 +111,36 @@
     }
 
     .quote {
-      max-width: 300px;
+      max-width: 390px;
       margin: 0;
       color: #d4d9e2;
-      font: italic 1.18rem/1.55 'Fraunces', Georgia, serif;
+      font: italic clamp(1.05rem, 1.5vw, 1.25rem)/1.6 'Fraunces', Georgia, serif;
     }
 
     .login-panel {
-      grid-column: 1;
-      justify-self: center;
-      z-index: 2;
-      width: min(100%, 430px);
+      grid-column: 2;
+      justify-self: stretch;
+      z-index: 1;
+      width: 100%;
+      min-width: 0;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: clamp(30px, 4vw, 48px);
-      border: 1px solid rgba(255, 255, 255, 0.58);
-      border-radius: 10px;
+      padding: clamp(30px, 4vw, 46px);
+      border: 1px solid rgba(255, 255, 255, 0.76);
+      border-radius: 18px;
       background: var(--panel);
-      box-shadow: 0 24px 55px rgba(10, 31, 66, 0.22);
-      backdrop-filter: blur(14px);
+      box-shadow: var(--shadow);
     }
 
     h1 {
-      margin: 0 0 8px;
+      margin: 0 0 10px;
       color: var(--ink);
-      font: 600 2.1rem/1.1 'Space Grotesk', Arial, sans-serif;
+      font: 600 clamp(1.9rem, 3vw, 2.3rem)/1.1 'Space Grotesk', Arial, sans-serif;
     }
 
     .intro {
-      margin: 0 0 32px;
+      margin: 0 0 28px;
       color: var(--muted);
       font: 0.92rem/1.5 'DM Sans', Arial, sans-serif;
     }
@@ -194,18 +164,24 @@
       text-transform: none;
     }
 
-    .remember-me input { width: auto; accent-color: var(--accent); }
+    .remember-me input {
+      width: 16px;
+      height: 16px;
+      min-height: 16px;
+      margin: 0;
+      accent-color: var(--accent);
+    }
 
     .forgot-link {
-      color: #be7100;
+      color: var(--accent-dark);
       font-weight: 700;
       text-decoration: none;
     }
 
     .forgot-link:hover { text-decoration: underline; }
 
-    form { display: grid; gap: 18px; }
-    .field { display: flex; flex-direction: column; gap: 7px; }
+    form { display: grid; gap: 17px; }
+    .field { display: flex; flex-direction: column; gap: 8px; }
 
     label {
       color: var(--ink);
@@ -216,23 +192,24 @@
 
     input {
       width: 100%;
+      min-height: 50px;
       border: 1px solid var(--line);
-      border-radius: 2px;
-      padding: 14px;
+      border-radius: 9px;
+      padding: 13px 14px;
       color: var(--ink);
-      background: rgba(255, 255, 255, 0.76);
+      background: #fff;
       font: 1rem/1.25 'DM Sans', Arial, sans-serif;
       outline: none;
-      transition: border-color 160ms ease, box-shadow 160ms ease;
+      transition: border-color 160ms ease, box-shadow 160ms ease, background 160ms ease;
     }
 
     input:focus {
       border-color: var(--accent);
-      box-shadow: 0 0 0 3px rgba(255, 173, 31, 0.2);
+      box-shadow: 0 0 0 3px rgba(185, 95, 0, 0.14);
     }
 
     input[aria-invalid="true"] { border-color: var(--error); }
-    .field-message { min-height: 15px; margin: 0; color: var(--error); font: 0.74rem/1.2 'DM Sans', Arial, sans-serif; }
+    .field-message { min-height: 0; margin: 0; color: var(--error); font: 0.74rem/1.2 'DM Sans', Arial, sans-serif; }
 
     .password-input { position: relative; }
     .password-input input { padding-right: 68px; }
@@ -243,7 +220,8 @@
       right: 10px;
       transform: translateY(-50%);
       border: 0;
-      padding: 4px;
+      min-height: 40px;
+      padding: 8px;
       color: var(--accent-dark);
       background: transparent;
       cursor: pointer;
@@ -253,7 +231,8 @@
 
     .submit-button {
       border: 0;
-      border-radius: 2px;
+      min-height: 52px;
+      border-radius: 9px;
       padding: 15px 20px;
       color: #fffaf3;
       background: var(--accent);
@@ -265,17 +244,20 @@
     }
 
     .submit-button:hover { background: var(--accent-dark); transform: translateY(-1px); }
-    .submit-button:focus-visible, .create-link:focus-visible, .password-toggle:focus-visible { outline: 3px solid rgba(255, 173, 31, 0.4); outline-offset: 3px; }
+    .submit-button:focus-visible, .create-link:focus-visible, .password-toggle:focus-visible, .forgot-link:focus-visible {
+      outline: 3px solid #ffd071;
+      outline-offset: 3px;
+    }
 
     .create-account {
-      margin: 24px 0 0;
+      margin: 22px 0 0;
       color: #4f5868;
       text-align: center;
       font: 0.88rem/1.4 'DM Sans', Arial, sans-serif;
     }
 
     .create-link {
-      color: #be7100;
+      color: var(--accent-dark);
       font-weight: 700;
       text-decoration: none;
     }
@@ -285,7 +267,8 @@
     .login-message {
       display: none;
       margin: 0;
-      padding: 13px 14px;
+      padding: 12px 14px;
+      border-radius: 8px;
       color: var(--success);
       border: 1px solid rgba(45, 121, 93, 0.25);
       background: rgba(45, 121, 93, 0.08);
@@ -294,33 +277,56 @@
 
     .login-message.visible { display: block; }
 
-    @media (max-width: 700px) {
-      .page { padding: 0; }
-      .login-shell { gap: 18px; min-height: 100vh; padding: 92px 18px 36px; }
-      .brand-panel { position: relative; top: auto; left: auto; min-height: 245px; width: 100%; padding: 10px 8px; transform: none; }
-      .login-panel { padding: 30px 22px; }
-      .site-header { padding: 0 18px; }
+    @media (max-width: 760px) {
+      .login-shell {
+        grid-template-columns: minmax(0, 1fr);
+        justify-items: center;
+        align-content: start;
+        gap: clamp(20px, 4vh, 32px);
+        padding: 88px 24px 40px;
+      }
+
+      .brand-panel { width: min(100%, 480px); padding: 0 2px; }
+      .eyebrow { margin-bottom: 12px; font-size: 0.66rem; }
+      .brand-lockup { margin-bottom: 14px; font-size: clamp(2.6rem, 11vw, 4rem); }
+      .quote { max-width: 440px; font-size: 1rem; }
+      .brand-panel .eyebrow:last-child { display: none; }
+      .login-panel { grid-column: 1; justify-self: center; width: min(100%, 480px); padding: 30px clamp(22px, 6vw, 36px); }
+    }
+
+    @media (max-width: 420px) {
+      .login-shell { gap: 16px; padding: 84px 16px 28px; }
+      .brand-mark { width: 34px; height: 34px; }
+      .login-panel { padding: 26px 20px; border-radius: 14px; }
+      .intro { margin-bottom: 22px; }
+      .intro { margin-bottom: 22px; }
+      form { gap: 14px; }
+      .login-options { font-size: 0.74rem; }
+    }
+
+    @media (max-height: 680px) and (min-width: 761px) {
+      .login-shell { padding-top: 88px; padding-bottom: 28px; }
+      .login-panel { padding-top: 28px; padding-bottom: 28px; }
+      .intro { margin-bottom: 20px; }
     }
   </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <main class="page">
     <section class="login-shell" aria-labelledby="login-title">
-      <header class="site-header">
-        <a class="site-brand" href="login.html"><span class="brand-mark" aria-hidden="true">✦</span>Sun Son Solar</a>
-      </header>
       <div class="brand-panel">
-        <div>
-          <p class="eyebrow">Clean energy for every home</p>
-          <p class="brand-lockup">Power your<span>future</span></p>
-          <p class="quote">Sign in to manage your solar journey and make every ray count.</p>
-        </div>
-        <p class="eyebrow">Smarter solar. Brighter living.</p>
+        <p class="eyebrow">Power your next chapter</p>
+        <p class="brand-lockup">Sun Son<span>Solar</span></p>
+        <h2>Start<br>somewhere<br>good.</h2>
+        <p class="quote">Create your account and keep your details in one simple, secure place.</p>
       </div>
-
       <div class="login-panel">
+        <a class="card-brand" href="login.html" aria-label="Sun Son Solar home">
+          <span class="brand-mark" aria-hidden="true">✦</span>
+          <span>Sun Son Solar</span>
+        </a>
         <h1 id="login-title">Log in</h1>
-        <p class="intro">Enter your account details to continue.</p>
 
         <form id="loginForm" novalidate>
           <div class="field">
@@ -346,9 +352,14 @@
           <button class="submit-button" type="submit">Log in</button>
           <p class="login-message" id="loginMessage" role="status">Your login details are ready to submit.</p>
         </form>
-
+        <div class="divider" aria-label="or continue with"><span>or continue with</span></div>
+        <div class="social-buttons" aria-label="Social sign in options">
+          <button class="social-button" type="button" aria-label="Continue with Google"><span class="social-icon google-icon" aria-hidden="true">G</span><span>Google</span></button>
+          <button class="social-button" type="button" aria-label="Continue with GitHub"><span class="social-icon github-icon" aria-hidden="true">GH</span><span>GitHub</span></button>
+          <button class="social-button" type="button" aria-label="Continue with Facebook"><span class="social-icon facebook-icon" aria-hidden="true">f</span><span>Facebook</span></button>
+        </div>
         <p class="create-account">New to Sun Son Solar? <a class="create-link" href="index.html">Create account</a></p>
-      </div>
+        </div>
     </section>
   </main>
 
