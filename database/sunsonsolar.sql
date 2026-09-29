@@ -86,7 +86,7 @@ CREATE TABLE `users` (
   `address` text NOT NULL,
   `username` varchar(50) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `department` enum('dispatcher','technical admin','IT','sales') DEFAULT NULL,
+  `department` enum('Administration', 'IT', 'Dispatch', 'Accounting', 'Hr', 'Marketing', 'Sales', 'Costumer Service') DEFAULT NULL,
   `created_at` datetime DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -96,8 +96,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `first_name`, `middle_name`, `last_name`, `birthdate`, `gender`, `email`, `phone_num`, `address`, `username`, `password`, `department`, `created_at`) VALUES
 (1, 'Kitty', 'Kat', 'User', '1998-05-16', 'Female', 'kittykat16@example.com', '09123456789', '123 Main St', 'KittyKat16', 'K@tSunShine16', NULL, '2026-09-29 09:07:07'),
-(2, 'Sol', 'S', 'Solis', '1990-01-01', 'Male', 'solsolis@sunsonsolar.com', '09987654321', 'Solar HQ Office', 'Sol Solis', 'admin123', 'IT', '2026-09-29 09:07:22');
-
+(2, 'Sol', 'S', 'Solis', '1967/01/08', 'Male', 'sol.solis@sunsonsolar.com', '09987654321', 'Solar HQ Office', 'Sol Solis', 'admin123', 'IT', '2026-09-29 09:07:22'),
+(3, 'Katherine', 'O', 'Sinigaraw', '1990/01/07', 'Female', 'katherine.sinigaraw@sunsonsolar.com', '09291230983', 'Client', 'Sol Solis', 'admin123', 'IT', '2026-09-29 09:02:39');
 --
 -- Indexes for dumped tables
 --
